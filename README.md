@@ -1,45 +1,47 @@
-# 📚 Literalura
+# 📚 Literalura — Catálogo de Livros com Spring Boot e PostgreSQL
 
-Aplicação Java desenvolvida com **Spring Boot** que consome a API pública **Gutendex** para busca de livros por título, persistindo os dados em um banco **PostgreSQL** e permitindo consultas via menu interativo no console.
+Projeto desenvolvido em **Java com Spring Boot**, utilizando **Spring Data JPA**, **PostgreSQL** e integração com a **API Gutendex** (catálogo do Project Gutenberg).
 
-Projeto desenvolvido com foco em **boas práticas**, **arquitetura em camadas** e **integração com API externa + banco relacional**.
+O sistema permite buscar livros por título, armazenar os dados em banco de dados e realizar consultas locais por idioma e listagem geral, por meio de um **menu interativo no console**.
 
 ---
 
 ## 🚀 Funcionalidades
 
-- 🔍 Busca de livros por título utilizando a API Gutendex
-- 💾 Persistência de dados no PostgreSQL
-- 📋 Listagem de todos os livros cadastrados
-- 🌎 Filtro de livros por idioma (pt, en, es, fr)
-- ⚠️ Prevenção de duplicidade de registros
-- 🧠 Separação clara de responsabilidades (Service / Repository)
+- 🔍 Buscar livros por título via API Gutendex
+- 💾 Salvar livros automaticamente no banco de dados PostgreSQL
+- 📚 Listar livros salvos localmente
+- 🌍 Listar livros por idioma
+- 🚫 Evita salvar livros duplicados
+- 📈 Exibe quantidade de downloads
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## 🧱 Arquitetura do Projeto
+
+O projeto segue boas práticas de **arquitetura em camadas**, com separação clara de responsabilidades:
+
+
+---
+
+## 🛠️ Tecnologias Utilizadas
 
 - **Java 17**
 - **Spring Boot 3**
 - **Spring Data JPA**
-- **Hibernate ORM**
-- **PostgreSQL**
+- **Hibernate**
+- **PostgreSQL 18**
 - **Maven**
 - **API Gutendex**
 - **IntelliJ IDEA**
 
 ---
 
-## 🧱 Arquitetura do Projeto
+## 🗄️ Banco de Dados
 
-O projeto segue o padrão de **arquitetura em camadas**:
+O projeto utiliza **PostgreSQL** para persistência dos dados.
 
-
----
-
-## ⚙️ Configuração do Banco de Dados
-
-No arquivo `src/main/resources/application.properties`:
+### Exemplo de configuração (`application.properties`)
 
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5433/literalura
@@ -49,10 +51,6 @@ spring.datasource.password=SUA_SENHA_AQUI
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
-git clone https://github.com/Peroba-007/literalura.git
-
-cd literalura
-
 mvn spring-boot:run
 
 ===== MENU LITERALURA =====
@@ -61,19 +59,4 @@ mvn spring-boot:run
 3 - Listar livros por idioma
 0 - Sair
 ===========================
-
-
----
-
-## ✅ O QUE VOCÊ TEM AGORA
-✔️ Projeto **de portfólio real**  
-✔️ README no nível de mercado  
-✔️ Código funcional  
-  
-
-
-- 🟦 Post profissional para LinkedIn  
-- 🟩 Texto curto para recrutador  
-- 🟨 Pequenos ajustes estéticos  
-
 
